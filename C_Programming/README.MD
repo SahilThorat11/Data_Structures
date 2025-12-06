@@ -1,56 +1,54 @@
 <h1 align="center" style="color:#00eaff;">
-📚 Data Structures Repository
+📚 Data Structures in C Programming
 </h1>
------
-A collection of Data Structure implementations written in C, C++, and Java.
-This repository is designed for learners, students, and developers who want to understand and compare data structure logic across different languages.
 
------
+---
 
-## 📘 Included Data Structures:
+A collection of **Data Structure implementations written in C**.  
+This repository is designed for learners, students, and developers who want to understand and apply data-structure logic in the C programming language.
 
------
+---
 
-Each language folder contains implementations for commonly used data structures such as:
+## 📘 Included Data Structures :
 
+---
 
-🔗 Linked Lists
+### **Linear Data Structures**
 
-🧱 Stacks
+- 🔗 **Linked Lists**
+- 🧱 **Stacks**
+- 📥 **Queues**
 
-📥 Queues
+### **Non-Linear Data Structures**
 
-🌳 Trees
+- 🌳 **Trees**
+- 🗂️ **Hash Tables**
 
-🗂️ Hash Tables
+---
 
------
+    ## 🎯 Purpose of This Repository
 
-## 🎯 Purpose of This Repository:
+        - ✔ Learn and practice core Data Structure concepts  
+        - ✔ Understand logic implementation using C  
+        - ✔ Improve problem-solving & algorithmic thinking  
+        - ✔ Use as a reusable reference for students and developers  
 
------
-
-        ✔ Learn and practice Data Structure concepts
-
-        ✔ Compare logic across multiple programming languages
-
-        ✔ Improve problem-solving & algorithmic understanding
-
-        ✔ Provide a reusable reference for students and developers
-
------
+---
 
 ## 📁 Folder Structure:-
 
 -----
 
     Data_Structure/
+    │
+    ├── 📘 C_Programming/
+        ├── 🧩 LinkedList/
+        │   ├── 🔹 SinglyLinearLinkedList
+        │   ├── 🔹 SinglyCircularLinkedList
+        │   ├── 🔹 DoublyLinearLinkedList
+        │   └── 🔹 DoublyCircularLinkedList
         │
-        ├── 📘 C_Programming/
-        │   └── Data structure implementations using C
-        │
-        ├── 💻 Cpp_Programming/
-        │   └── Data structure implementations using C++
-        │
-        └── ☕ Java_Programming/
-            └── Data structure implementations using Java
+        ├── 🧱 Stack
+        ├── 📥 Queue
+        ├── 🌳 Tree
+        └── 🗂️ HashTable
