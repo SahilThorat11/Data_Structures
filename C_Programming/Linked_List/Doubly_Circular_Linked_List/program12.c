@@ -193,8 +193,7 @@ void InsertAtPos(PPNODE first, PPNODE last, int no, int Pos)
 
 void DeleteAtPos(PPNODE first, PPNODE last, int Pos)
 {
-    int iSize = 0;
-    int iCnt = 0;
+    
     PNODE newn = NULL;
     PNODE temp = NULL;
 
