@@ -65,7 +65,7 @@ int Count(PNODE first)
     return iCount;
 }
 
-bool Search(PNODE first, int iNO)
+bool Search(PNODE first, int iNo)
 {
     PNODE temp = NULL;
 
@@ -73,7 +73,7 @@ bool Search(PNODE first, int iNO)
 
     while(temp != NULL)
     {
-        if(temp -> data == iNO)
+        if(temp -> data == iNo)
         {
             return true;
         }
@@ -86,22 +86,17 @@ bool Search(PNODE first, int iNO)
 
 int main()
 {
-    int iRet = 0, iValue = 0, iNode = 0, iCnt = 0;
+    int iRet = 0, iValue;
     bool bRet = false;
     PNODE head = NULL;
 
-    printf("How many nodes do you want? : ");
-    scanf("%d", &iNode);
-
-    for(iCnt = 1; iCnt <= iNode; iCnt++)
-    {
-        printf("Enter number %d : ", iCnt);
-        scanf("%d", &iValue);
-        InsertFirst(&head, iValue);
-    }
+    InsertFirst(&head, 111);
+    InsertFirst(&head, 101);
+    InsertFirst(&head, 51);
+    InsertFirst(&head, 21);
+    InsertFirst(&head, 11);
 
     Display(head);
-
     iRet = Count(head);
     printf("Number of nodes are : %d\n\n", iRet);
 
