@@ -106,7 +106,7 @@ int main()
     }
     else
     {
-        printf("Number is not present linked list.\n");
+        printf("Number is not present in linked list.\n");
     }
 
     return 0;
