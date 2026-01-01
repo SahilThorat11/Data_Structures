@@ -86,19 +86,29 @@ bool Search(PNODE first, int iNO)
 
 int main()
 {
-    int iRet = 0;
+    int iRet = 0, iValue = 0, iNode = 0, iCnt = 0;
     bool bRet = false;
     PNODE head = NULL;
 
-    InsertFirst(&head, 51);
-    InsertFirst(&head, 21);
-    InsertFirst(&head, 11);
+    printf("How many nodes do you want? : ");
+    scanf("%d", &iNode);
+
+    for(iCnt = 1; iCnt <= iNode; iCnt++)
+    {
+        printf("Enter number %d : ", iCnt);
+        scanf("%d", &iValue);
+        InsertFirst(&head, iValue);
+    }
 
     Display(head);
-    iRet = Count(head);
-    printf("Number of nodes are : %d\n", iRet);
 
-    bRet = Search(head, 11);
+    iRet = Count(head);
+    printf("Number of nodes are : %d\n\n", iRet);
+
+    printf("Enter number to search : ");
+    scanf("%d", &iValue);
+
+    bRet = Search(head, iValue);
 
     if(bRet == true)
     {
