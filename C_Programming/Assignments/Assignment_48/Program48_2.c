@@ -77,7 +77,7 @@ void ReplaceOdd(PNODE first)
 
         if((iNo % 2) != 0)
         {
-            iNo = 0;
+            iNo = 1;
         }
 
         printf("| %d | -> ", iNo);
