@@ -84,7 +84,6 @@ void MakeAbsolute(PNODE first)
 int main()
 {
     int iRet = 0;
-    bool bRet = false;
     PNODE head = NULL;
 
     InsertFirst(&head, 151);
