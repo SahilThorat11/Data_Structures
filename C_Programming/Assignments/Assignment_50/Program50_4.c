@@ -89,8 +89,6 @@ void DisplayAlternate(PNODE first)
     printf("NULL\n");
 }
 
-
-
 int main()
 {
     int iRet = 0;
