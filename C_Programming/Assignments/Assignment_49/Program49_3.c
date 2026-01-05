@@ -101,7 +101,7 @@ int main()
     iRet = Count(head);
     printf("Number of nodes are : %d\n\n", iRet);
 
-    printf("Number Divisible by 3 from the linked list are : \n");
+    printf("Number Divisible by 3 from the linked list is : \n");
     DisplayDivByThree(head);
 
     return 0;
