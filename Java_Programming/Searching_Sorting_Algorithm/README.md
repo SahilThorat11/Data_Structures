@@ -51,8 +51,8 @@ Data_Structure/
 
 ## 🧠 Algorithms Implemented
 
-| Algorithm      | Status      | Description                          |
-| -------------- | ----------- | ------------------------------------ |
+| Algorithm      | Status        | Description                          |
+| -------------- | -----------   | ------------------------------------ |
 | Bubble Sort    | ✅ Completed | Compares adjacent elements and swaps |
 | Insertion Sort | ✅ Completed | Inserts element at correct position  |
 | Selection Sort | ✅ Completed | Finds minimum and places correctly   |
