@@ -1,9 +1,6 @@
 #include<iostream>
 using namespace std;
 
-# define INC_ORDER 1
-# define DEC_ORDER 2
-
 class ArrayX
 {
     public:
@@ -21,11 +18,7 @@ class ArrayX
 
         bool CheckSorted();
 
-        void BubbleSort();
-        void BubbleSortEfficient();
-        void BubbleSortEfficientX(int iOption);
-
-        void SelectionSort();
+        void InsertionSort();
 };
 
 ArrayX :: ArrayX(int no)
@@ -96,200 +89,22 @@ bool ArrayX :: CheckSorted()
     return bFlag;
 }
 
-void ArrayX :: BubbleSort()
+void ArrayX :: InsertionSort()
 {
-    int i = 0, j = 0;
-    int temp = 0;
-    int Pass = 0;
-    int Time = 0;
+    int i = 0, j = 0, Key = 0;
 
-    if(Sorted == true)                          // Important filter
+    for (i = 1; i < iSize; i++)
     {
-        return;
-    }
+        Key = Arr[i];
+        j = i - 1;
 
-    Time = 1;
-
-    for (i = 0, Pass = 1; i < iSize - 1; i++, Pass++)             // Outer loop
-    {
-        for (j = 0; j < iSize - 1 -i; j++, Time++)     // Inner Loop
+        while(j >= 0 && Arr[j] > Key)
         {
-            if(Arr[j] > Arr[j + 1])
-            {
-                temp = Arr[j];
-                Arr[j] = Arr[j + 1];
-                Arr[j + 1] = temp;
-            }
+            Arr[j + 1] = Arr[j];
+            j = j - 1;
         }
 
-        cout << "\nData After pass :- " << i + 1 << "\n";
-        Display();
-    }
-
-    cout << "Number of passes for BubbleSort : " << Pass << "\n";
-
-    cout << "Total Number of iterations : " << Time << "\n";
-
-    Sorted = true;
-}
-
-/*
-    Pass 1 : 0  1   2   3
-    Pass 2 : 0  1   2
-    Pass 3 : 0  1
-    Pass 4 : 0
-*/
-
-// 21   15  18  16  11
-void ArrayX :: BubbleSortEfficient()
-{
-    int i = 0, j = 0;
-    int temp = 0;
-
-    bool bFlag = false;
-
-/*
-
-    if(Sorted == true)                          // Important filter
-    {
-        return;
-    }
-
-*/
-
-    bFlag = true;
-
-    for (i = 0; (i < iSize - 1) && (bFlag == true); i++)             // Outer loop
-    {
-        bFlag = false;
-
-        for (j = 0; j < iSize - 1 -i; j++)     // Inner Loop
-        {
-            if(Arr[j] > Arr[j + 1])                     
-            {
-                temp = Arr[j];
-                Arr[j] = Arr[j + 1];
-                Arr[j + 1] = temp;
-
-                bFlag = true;
-            }
-        }
-
-        cout << "\nData After pass :- " << i + 1 << "\n";
-        Display();
-    }
-
-    cout << "Number of passes for BubbleSortEfficient : " << i << "\n";
-
-    Sorted = true;
-}
-
-// 1  : Increasing
-// 2  : Decreasing
-void ArrayX :: BubbleSortEfficientX(int iOption = INC_ORDER)
-{
-    int i = 0, j = 0;
-    int temp = 0;
-
-    bool bFlag = false;
-
-
-    if(iOption < INC_ORDER || iOption > DEC_ORDER)             // 1  || 2
-    {
-        cout << "Invalid option for Sorting\n";
-        cout << "1  : Increasing\n";
-        cout << "2  : Decreasing\n";
-    }
-
-/*
-
-    if(Sorted == true)                          // Important filter
-    {
-        return;
-    }
-
-*/
-
-    bFlag = true;
-
-    if(iOption == INC_ORDER)
-    {
-        for (i = 0; (i < iSize - 1) && (bFlag == true); i++)             // Outer loop
-        {
-            bFlag = false;
-
-            for (j = 0; j < iSize - 1 -i; j++)     // Inner Loop
-            {
-                if(Arr[j] > Arr[j + 1])                     
-                {
-                    temp = Arr[j];
-                    Arr[j] = Arr[j + 1];
-                    Arr[j + 1] = temp;
-
-                    bFlag = true;
-                }
-            }
-
-            cout << "\nData After pass :- " << i + 1 << "\n";
-            Display();
-        }
-    } // End of if(iOption == 1)
-
-    else if(iOption == DEC_ORDER)
-    {
-        for (i = 0; (i < iSize - 1) && (bFlag == true); i++)             // Outer loop
-        {
-            bFlag = false;
-
-            for (j = 0; j < iSize - 1 -i; j++)     // Inner Loop
-            {
-                if(Arr[j] < Arr[j + 1])                     
-                {
-                    temp = Arr[j];
-                    Arr[j] = Arr[j + 1];
-                    Arr[j + 1] = temp;
-
-                    bFlag = true;
-                }
-            }
-
-            cout << "\nData After pass :- " << i + 1 << "\n";
-            Display();
-        }
-    } // End of else if(iOption == 2)
-
-    cout << "Number of passes for BubbleSortEfficient : " << i << "\n";
-
-    Sorted = true;
-}
-
-/*
-    Pass 1 : 0  1   2   3
-    Pass 2 : 0  1   2
-    Pass 3 : 0  1
-    Pass 4 : 0
-*/
-
-void ArrayX :: SelectionSort()
-{
-    int i = 0, j = 0, temp = 0;
-    int min_index = 0;
-
-    for (i = 0; i < iSize - 1; i++)
-    {
-        min_index = i;
-
-        for (j = i + 1; j < iSize; j++)
-        {
-            if(Arr[j] < Arr[min_index])
-            {
-                min_index = j;
-            }
-        }
-
-        temp = Arr[i];
-        Arr[i] = Arr[min_index];
-        Arr[min_index] = temp;
+        Arr[j + 1] = Key;
     }
 }
 
@@ -316,15 +131,10 @@ int main()
         cout << "\nData is not sorted.\n";
     }
 
-    // 1  : Increasing
-    // 2  : Decreasing
-    // aobj.BubbleSortEfficientX(DEC_ORDER);
+    aobj.InsertionSort();
 
-    aobj.SelectionSort();
-    
     cout << "\nData After Sorting :-\n";
     aobj.Display();
 
     return 0;
 }
-
