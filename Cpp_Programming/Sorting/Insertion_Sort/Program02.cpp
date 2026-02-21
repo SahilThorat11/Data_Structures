@@ -26,8 +26,6 @@ class ArrayX
         void BubbleSortEfficientX(int iOption);
 
         void SelectionSort();
-
-        void InsertionSort();
 };
 
 ArrayX :: ArrayX(int no)
@@ -289,28 +287,9 @@ void ArrayX :: SelectionSort()
             }
         }
 
-        if(i != min_index)
-        {
-            temp = Arr[i];
-            Arr[i] = Arr[min_index];
-            Arr[min_index] = temp;
-        }
-    }
-}
-
-void ArrayX :: InsertionSort()
-{
-    int i = 0, j = 0;
-    int Selected = 0;
-
-    for (i = 1; i < iSize; i++)
-    {
-        for (j = i - 1, Selected = Arr[i]; (j >= 0) && (Arr[j] > Selected); j--)
-        {
-            Arr[j + 1] = Arr[j];
-        }
-
-        Arr[j + 1] = Selected;
+        temp = Arr[i];
+        Arr[i] = Arr[min_index];
+        Arr[min_index] = temp;
     }
 }
 
@@ -341,9 +320,7 @@ int main()
     // 2  : Decreasing
     // aobj.BubbleSortEfficientX(DEC_ORDER);
 
-    // aobj.SelectionSort();
-
-    aobj.InsertionSort();
+    aobj.SelectionSort();
     
     cout << "\nData After Sorting :-\n";
     aobj.Display();
