@@ -15,7 +15,7 @@ class ArrayX
         ArrayX(int no);
         ~ArrayX();
 
-        // Accept the values and Display the values
+        // Accept the values  and Display the values
         void Accept();
         void Display();
 
