@@ -1,0 +1,47 @@
+// P09 - Stack using Array
+class P09_StackArray 
+{
+    static int[] stack = new int[100];
+    static int top = -1;
+
+    static void push(int val) 
+    {
+        if(top == stack.length - 1) 
+        { 
+            System.out.println("Stack Overflow"); 
+            return; 
+        }
+
+        stack[++top] = val;
+    }
+
+    static int pop() 
+    {
+        if (top == -1) 
+        { 
+            System.out.println("Stack Underflow"); 
+            return -1; 
+        }
+
+        return stack[top--];
+    }
+
+    static int peek() 
+    { 
+        return top == -1 ? -1 : stack[top]; 
+    }
+    static boolean isEmpty() 
+    { 
+        return top == -1; 
+    }
+
+    public static void main(String[] args) 
+    {
+        push(10); 
+        push(20); 
+        push(30);
+        System.out.println("Top: " + peek());
+        System.out.println("Pop: " + pop());
+        System.out.println("Top after pop: " + peek());
+    }
+}
