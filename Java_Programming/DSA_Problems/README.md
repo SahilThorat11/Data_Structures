@@ -3,7 +3,7 @@
 30 standalone Java programs covering core Data Structures & Algorithms topics.
 Each file compiles independently. Run with:
 
-    javac P01_BubbleSort.java && java P01_BubbleSort
+    javac Program01.java && java Program01
 
 ---
 
