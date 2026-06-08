@@ -1,5 +1,5 @@
 // P06 - Binary Search
-public class Program06 
+class Program06 
 {
     static int binarySearch(int[] arr, int target) 
     {
